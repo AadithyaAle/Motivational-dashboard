@@ -35,7 +35,7 @@ A modern React application that delivers daily motivational quotes with interact
 src/
  ├── App.js
  ├── App.css
- ├── index.js
+ ├── index.js──
  └── components/
        └── QuoteCard.js
 ```
