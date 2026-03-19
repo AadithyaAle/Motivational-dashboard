@@ -1,38 +1,239 @@
-.App {
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* LIGHT MODE */
+body {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  color: #2d2d2d;
+}
+
+/* DARK MODE FULL SCREEN */
+body.dark {
+  background: linear-gradient(135deg, #1e1e2f, #2c2c3e);
+  color: #ffffff;
+}
+
+/* APP */
+.app {
   text-align: center;
+  padding: 40px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* TITLE */
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* THEME BUTTON */
+.theme-toggle {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* GLASS CONTAINER */
+.container {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 380px;
+  margin: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .container {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* CATEGORY BUTTONS */
+.category-buttons {
+  margin-bottom: 15px;
+}
+
+.category-buttons button {
+  margin: 5px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-buttons button:hover {
+  transform: scale(1.05);
+}
+
+.category-buttons .active {
+  background: #4facfe;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* QUOTE CARD */
+.card {
+  animation: fadeIn 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+/* BIG QUOTE */
+.quote {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* AUTHOR */
+.author {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* BUTTONS */
+button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* NEW QUOTE */
+.new-btn {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: white;
+}
+
+.new-btn:hover {
+  background: linear-gradient(135deg, #00c6ff, #4facfe);
+}
+
+/* LIKE BUTTON */
+.like-btn {
+  background: #eef2f7;
+}
+
+body.dark .like-btn {
+  background: #444;
+  color: white;
+}
+
+.like-btn.liked {
+  background: #ff6b81;
+  color: white;
+}
+
+/* SEARCH */
+.search-input {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+body.dark .search-input {
+  background: #333;
+  color: white;
+}
+
+/* LIST */
+.liked-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.liked-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+body.dark .liked-item {
+  background: #2c2c3e;
+}
+
+/* REMOVE */
+.remove-btn {
+  background: transparent;
+  color: #ff4d6d;
+  font-size: 18px;
+}
+
+/* STATES */
+.error {
+  color: #ff4d6d;
+}
+
+.empty {
+  font-style: italic;
+  color: #777;
+}
+
+/* SPINNER */
+.spinner {
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid #4facfe;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+/* SCROLL */
+.liked-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.liked-list::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
