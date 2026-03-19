@@ -112,7 +112,7 @@ npm start
 
 ## 👨‍💻 Author
 
-Developed by **[Your Name]**
+Developed by **Ale Aadithya**
 
 ---
 
